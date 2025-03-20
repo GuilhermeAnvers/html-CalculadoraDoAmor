@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Resultado do Cálculo</title>
+  <link rel="stylesheet" href="segundostyle.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="background" ></div>
+  <div class="mainTitle"> ❤️ Me Parece Que... ❤️ </div>
+  
+  <div id="resultArea"></div>
+
+  <div class="resultContainer">
+    <h1>Resultado</h1>
+    <div id="resultArea"></div>
+    <div id="messageArea"></div>
+
+  <div class="subtitle"> </div>
+
+
+  <script> 
+  const loveResult = localStorage.getItem('loveResult');
+  const lovePercentage = localStorage.getItem('lovePercentage');
+
+  if (loveResult && lovePercentage !== null) {
+    document.getElementById('resultArea').innerText = loveResult;
+
+    let message = "";
+    if (lovePercentage > 70) {
+      message = "Vocês são almas gêmeas! ❤️🥰❤️";
+    } else if (lovePercentage > 30 && lovePercentage <= 70) {
+      message = "Vocês seriam bons namorados. ❤️";
+    } else {
+      message = "Acho que não vai dar certo... 🤔";
+    }
+    document.getElementById('messageArea').innerText = message;
+  } else {
+    document.getElementById('resultArea').innerText = "Erro ao calcular o amor. Tente novamente.";
+  }
+  </script>
+</body>
